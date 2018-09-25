@@ -1,3 +1,4 @@
+int count = 0;
 void setup()
 {
 	noLoop();
@@ -12,11 +13,12 @@ void draw()
 			one.show();
 		}
 	}
-	
+	text("Total: "+count,500,595);
 }
 void mousePressed()
 {
 	redraw();
+	count = 0;
 }
 class Die //models one single dice cube
 {
@@ -35,21 +37,25 @@ class Die //models one single dice cube
 		fill(0);
 		if (random == 1) {
 			ellipse(myX+40,myY+40,10,10);
+			count = count + 1;
 		}
 		else if (random == 2) {
 			ellipse(myX+20,myY+20,10,10);
 			ellipse(myX+60,myY+60,10,10);
+			count = count + 2;
 		}
 		else if (random == 3) {
 			ellipse(myX+20,myY+20,10,10);
 			ellipse(myX+40,myY+40,10,10);
 			ellipse(myX+60,myY+60,10,10);
+			count = count + 3;
 		}
 		else if (random == 4) {
 			ellipse(myX+20,myY+20,10,10);
 			ellipse(myX+60,myY+20,10,10);
 			ellipse(myX+60,myY+60,10,10);
 			ellipse(myX+20,myY+60,10,10);
+			count = count + 4;
 		}
 		else if (random == 5) {
 			ellipse(myX+20,myY+20,10,10);
@@ -57,6 +63,7 @@ class Die //models one single dice cube
 			ellipse(myX+60,myY+60,10,10);
 			ellipse(myX+20,myY+60,10,10);
 			ellipse(myX+40,myY+40,10,10);
+			count = count + 5;
 		}
 		else {
 			ellipse(myX+20,myY+20,10,10);
@@ -65,6 +72,8 @@ class Die //models one single dice cube
 			ellipse(myX+60,myY+20,10,10);
 			ellipse(myX+60,myY+40,10,10);
 			ellipse(myX+60,myY+60,10,10);
+			count = count + 6;
+
 		}
 	}
 }
