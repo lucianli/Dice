@@ -33,7 +33,7 @@ class Die //models one single dice cube
 	void show()
 	{
 		fill((int)(Math.random()*200+55),(int)(Math.random()*200+55),(int)(Math.random()*200+55));
-		rect(myX,myY,80,80);
+		rect(myX,myY,80,80,15);
 		fill(0);
 		if (random == 1) {
 			ellipse(myX+40,myY+40,10,10);
